@@ -44,14 +44,6 @@ function carWashSimulator()
     IAT = randomNumberGenerator(r,numCars-1,100, num_bays);
     AT = randomNumberGenerator(r,numCars,30, num_bays);
     
-    % Print generated random numbers
-    disp('Random number for service time): ');
-    disp(ST);
-    disp('Random number for inter-arrival time: ');
-    disp(IAT);
-    disp('Random number for arrival time: ');
-    disp(AT);
-    
     % Generate and print service type table
     generateAndPrintServiceTypeTable(numCars);
     
