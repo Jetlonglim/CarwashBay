@@ -51,8 +51,10 @@ function printSimulationTable(C)
     for washbayNum = 1:3
         if washbayNum == 1
             fprintf('Wash bay %1.0f (Express Wash bay): \n', washbayNum);
+        elseif washbayNum == 2
+            fprintf('Wash bay %1.0f (Regular Wash bay): \n', washbayNum);
         else
-            fprintf('Wash bay %1.0f: \n', washbayNum);
+            fprintf('Wash bay %1.0f (Premium Wash bay): \n', washbayNum);
         end
     
         fprintf('+----+-----------------+--------------+---------------+--------------+--------------+---------+----------------+\n');
@@ -134,12 +136,12 @@ function printSimulationTable(C)
     
     % Display results
     fprintf('Average service time per item for express bay: %.2f\n', avg_item_serve(1));
-    fprintf('Average service time per item for regular bay 1: %.2f\n', avg_item_serve(2));
-    fprintf('Average service time per item for regular bay 2: %.2f\n', avg_item_serve(3));
+    fprintf('Average service time per item for regular bay: %.2f\n', avg_item_serve(2));
+    fprintf('Average service time per item for premium bay: %.2f\n', avg_item_serve(3));
     
     fprintf('Average service time for express bay: %.2f\n', avg_serve(1));
-    fprintf('Average service time for regular bay 1: %.2f\n', avg_serve(2));
-    fprintf('Average service time for regular bay 2: %.2f\n', avg_serve(3));
+    fprintf('Average service time for regular bay: %.2f\n', avg_serve(2));
+    fprintf('Average service time for premium bay: %.2f\n', avg_serve(3));
     
     fprintf('Average waiting time: %.2f\n', avg_wait);
     fprintf('Average inter-arrival time: %.2f\n', avg_inter);
