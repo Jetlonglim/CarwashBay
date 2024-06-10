@@ -25,8 +25,10 @@ function C = simulateAllCustomers(I, IAT, AT, expressLimit, ST, S)
         % Determine and set which bay the customer goes to based on the number of items acquired and the express limit
         if C(i, 5) <= expressLimit
             C(i, 1) = 1; % Assign to express bay
-        else
+        elseif C(i, 5) <= expressLimit * 2
             C(i, 1) = 2; % Assign to regular bay
+        else
+            C(i, 1) = 3; % Assign to premium bay
         end
 
         % Set RN for service time(per item)
